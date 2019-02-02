@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Core
 
 class ViewController: UIViewController {
     
@@ -15,7 +16,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let _ = Dummy()
     }
 
     @IBAction func numberTapped(_ sender: UIButton) {

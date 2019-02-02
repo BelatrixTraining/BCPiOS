@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Calculadora
+//@testable import Calculadora
 
 class CalculadoraTests: XCTestCase {
 

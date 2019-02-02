@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6955BF5A2205F5710073CE0B /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959C31E21FCC41D006836FF /* Dummy.swift */; };
 		6959C2CB21FCBE65006836FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959C2CA21FCBE65006836FF /* AppDelegate.swift */; };
 		6959C2CD21FCBE65006836FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959C2CC21FCBE65006836FF /* ViewController.swift */; };
 		6959C2D021FCBE65006836FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6959C2CE21FCBE65006836FF /* Main.storyboard */; };
@@ -20,8 +21,6 @@
 		6959C31221FCBF95006836FF /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 6959C30221FCBF95006836FF /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6959C31521FCBF95006836FF /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6959C30021FCBF95006836FF /* Core.framework */; };
 		6959C31621FCBF95006836FF /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6959C30021FCBF95006836FF /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6959C31F21FCC41D006836FF /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959C31E21FCC41D006836FF /* Dummy.swift */; };
-		6959C32021FCC421006836FF /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6959C31E21FCC41D006836FF /* Dummy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -423,7 +422,6 @@
 			files = (
 				6959C2D321FCBE65006836FF /* Calculadora.xcdatamodeld in Sources */,
 				6959C2CD21FCBE65006836FF /* ViewController.swift in Sources */,
-				6959C32021FCC421006836FF /* Dummy.swift in Sources */,
 				6959C2CB21FCBE65006836FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,7 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6959C31F21FCC41D006836FF /* Dummy.swift in Sources */,
+				6955BF5A2205F5710073CE0B /* Dummy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
