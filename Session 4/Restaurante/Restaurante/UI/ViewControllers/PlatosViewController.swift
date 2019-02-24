@@ -14,7 +14,7 @@ class PlatosViewController: UIViewController {
     
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
-    var platos:[String] = []
+    var platos:[Plato] = []
     
     // MARK: - Lifecycle
     
@@ -22,7 +22,6 @@ class PlatosViewController: UIViewController {
     override func awakeFromNib() {
         super.awakeFromNib()
         // tableView = nil
-        platos = ["Sopa wantan", "Chaufa de Choi", "Ceviche", "Lomo Saltado", "Tiramisu"]
     }
     
     // 3ro (2do si es que no se usa storyboard)
@@ -31,6 +30,7 @@ class PlatosViewController: UIViewController {
         // tableView ya no es nil !!!
         // Todos los datos estan cargados
         // Se ejecuta 1 sola vez
+        platos = PlatoFactory.crearPlatos()
         tableView.backgroundColor = .darkGray
     }
     
@@ -60,6 +60,20 @@ class PlatosViewController: UIViewController {
     deinit {
         print("Desde el listado platos destructor")
     }
+    
+    // MARK: - NAVIGATION
+    override func shouldPerformSegue(withIdentifier identifier: String,
+                                     sender: Any?) -> Bool {
+
+        return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinoVC = segue.destination as? PlatoDetalleViewController,
+            let celda = sender as? PlatoTableViewCell {
+            destinoVC.plato = celda.plato
+        }
+    }
 }
 
 extension PlatosViewController:UITableViewDataSource {
@@ -69,26 +83,38 @@ extension PlatosViewController:UITableViewDataSource {
     }
     
     // func nombreMEtodo(Alias variable:Tipo, alias variable:Tipo) -> TipoRetorno
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return platos.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let id = PlatosViewController.cellId
+        let id = PlatoTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)
+        let platoCell = cell as! PlatoTableViewCell
         
         let plato = platos[indexPath.row]
-        cell.textLabel?.text = plato
-        cell.detailTextLabel?.text = "Precio: S/ 10"
-        return cell
+        platoCell.plato = plato
+        return platoCell
     }
     
     
 }
 
 extension PlatosViewController:UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let plato = platos[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let destinoVC = storyboard.instantiateViewController(withIdentifier: "PlatoDetalleViewController") as! PlatoDetalleViewController
+        destinoVC.plato = plato
+        
+        self.navigationController?.pushViewController(destinoVC, animated: true)
+        
+    }
     
 }
 

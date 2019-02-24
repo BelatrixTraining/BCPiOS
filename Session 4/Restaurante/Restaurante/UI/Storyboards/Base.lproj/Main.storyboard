@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Restaurante" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Restaurante" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="d4u-cB-ZgS" kind="presentation" identifier="PresentPlatosViewController" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="4iY-ac-BYp"/>
+                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I1H-gc-GBg"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UAu-aQ-78k">
@@ -82,6 +82,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="HMj-TX-tAA"/>
+                    <connections>
+                        <segue destination="d4u-cB-ZgS" kind="presentation" identifier="PresentListaPlatosViewController" modalTransitionStyle="flipHorizontal" id="1R5-45-zim"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,16 +126,68 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ZaD-c2-3dM" kind="show" id="6hl-ug-p1H"/>
+                                            <segue destination="ZaD-c2-3dM" kind="show" identifier="ShowDetailSegue" id="6hl-ug-p1H"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlatoCompletoCell" id="W9i-1J-3UN">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlatoCompletoCell" rowHeight="110" id="W9i-1J-3UN" customClass="PlatoTableViewCell" customModule="Restaurante" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W9i-1J-3UN" id="p6b-7S-GqK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W9i-1J-3UN" id="p6b-7S-GqK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="37k-hz-8kI">
+                                                    <rect key="frame" x="16" y="5.5" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="EqQ-GB-z74"/>
+                                                        <constraint firstAttribute="width" secondItem="37k-hz-8kI" secondAttribute="height" multiplier="1:1" id="FEA-vw-g4E"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzD-BE-cjz">
+                                                    <rect key="frame" x="124" y="34.5" width="235" height="20.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4n-AA-6p0">
+                                                    <rect key="frame" x="124" y="84.5" width="235" height="21"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnU-0p-dDe">
+                                                    <rect key="frame" x="124" y="5.5" width="235" height="21"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="J4n-AA-6p0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qzD-BE-cjz" secondAttribute="bottom" constant="8" id="7Bz-ap-mF8"/>
+                                                <constraint firstItem="RnU-0p-dDe" firstAttribute="top" secondItem="p6b-7S-GqK" secondAttribute="top" constant="5" id="CRe-iv-e9n"/>
+                                                <constraint firstAttribute="trailing" secondItem="qzD-BE-cjz" secondAttribute="trailing" constant="16" id="FRc-Os-ZBC"/>
+                                                <constraint firstAttribute="trailing" secondItem="RnU-0p-dDe" secondAttribute="trailing" constant="16" id="TT8-nV-1GH"/>
+                                                <constraint firstItem="37k-hz-8kI" firstAttribute="leading" secondItem="p6b-7S-GqK" secondAttribute="leading" constant="16" id="UiX-Mi-Ipx"/>
+                                                <constraint firstItem="qzD-BE-cjz" firstAttribute="leading" secondItem="37k-hz-8kI" secondAttribute="trailing" constant="8" id="WlJ-4b-V7M"/>
+                                                <constraint firstItem="J4n-AA-6p0" firstAttribute="leading" secondItem="37k-hz-8kI" secondAttribute="trailing" constant="8" id="bA6-Xy-Cn7"/>
+                                                <constraint firstItem="RnU-0p-dDe" firstAttribute="leading" secondItem="37k-hz-8kI" secondAttribute="trailing" constant="8" id="epr-4P-qDQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="J4n-AA-6p0" secondAttribute="trailing" constant="16" id="fkg-aR-bkH"/>
+                                                <constraint firstAttribute="bottom" secondItem="37k-hz-8kI" secondAttribute="bottom" constant="5" id="gZ8-gx-Wrn"/>
+                                                <constraint firstItem="J4n-AA-6p0" firstAttribute="bottom" secondItem="37k-hz-8kI" secondAttribute="bottom" id="j0C-rQ-svD"/>
+                                                <constraint firstItem="qzD-BE-cjz" firstAttribute="top" secondItem="RnU-0p-dDe" secondAttribute="bottom" constant="8" id="scm-cN-8rn"/>
+                                                <constraint firstItem="37k-hz-8kI" firstAttribute="top" secondItem="p6b-7S-GqK" secondAttribute="top" constant="5" id="uxC-6i-NEf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="qzD-BE-cjz" id="yhM-89-dXC"/>
+                                            <outlet property="nameLabel" destination="RnU-0p-dDe" id="2si-Aq-s4a"/>
+                                            <outlet property="platoImageView" destination="37k-hz-8kI" id="h6x-w2-Mbj"/>
+                                            <outlet property="priceLabel" destination="J4n-AA-6p0" id="drD-bJ-pzr"/>
+                                            <segue destination="ZaD-c2-3dM" kind="show" id="8eg-oF-dp1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -157,22 +212,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AG5-aG-BPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2713" y="149"/>
+            <point key="canvasLocation" x="2712.8000000000002" y="148.87556221889056"/>
         </scene>
         <!--Plato Detalle View Controller-->
         <scene sceneID="QWX-7E-tYp">
             <objects>
-                <viewController id="ZaD-c2-3dM" customClass="PlatoDetalleViewController" customModule="Restaurante" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlatoDetalleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZaD-c2-3dM" customClass="PlatoDetalleViewController" customModule="Restaurante" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VWE-V6-kEu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UT7-Ch-gfd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="EXQ-ss-Dlr"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UT7-Ch-gfd" firstAttribute="leading" secondItem="ydH-VE-hRF" secondAttribute="leading" id="RMM-GI-Sdi"/>
+                            <constraint firstItem="UT7-Ch-gfd" firstAttribute="trailing" secondItem="ydH-VE-hRF" secondAttribute="trailing" id="oFj-6y-7ow"/>
+                            <constraint firstItem="UT7-Ch-gfd" firstAttribute="top" secondItem="ydH-VE-hRF" secondAttribute="top" id="oil-dQ-aPJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ydH-VE-hRF"/>
                     </view>
+                    <connections>
+                        <outlet property="platoImageView" destination="UT7-Ch-gfd" id="AVB-UY-sh1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxR-N6-gPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3462" y="147"/>
+            <point key="canvasLocation" x="3461.5999999999999" y="146.17691154422789"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Q2e-bk-hwK">
@@ -723,4 +794,7 @@
             <point key="canvasLocation" x="1841" y="149"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8eg-oF-dp1"/>
+    </inferredMetricsTieBreakers>
 </document>

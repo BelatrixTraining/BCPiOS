@@ -10,11 +10,19 @@ import UIKit
 
 class PlatoDetalleViewController: UIViewController {
 
+    @IBOutlet weak var platoImageView: UIImageView!
+    var plato:Plato? {
+        didSet {
+            if isViewLoaded {
+                platoImageView.image = plato?.image
+            }
+        }
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Cargando plato detalle")
+        platoImageView.image = plato?.image
     }
     
     // 4to esta por aparecer
