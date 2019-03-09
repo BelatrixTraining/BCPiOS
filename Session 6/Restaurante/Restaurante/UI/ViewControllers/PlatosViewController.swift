@@ -32,6 +32,25 @@ class PlatosViewController: UIViewController {
         // Se ejecuta 1 sola vez
         platos = PlatoFactory.crearPlatos()
         tableView.backgroundColor = .darkGray
+        
+
+        //unowned let weakSelf = self
+        // OBJC __weak *weakSelf:PlatosViewController = self
+        
+        
+        // [unowned self] <------ SOluciona el Retain Cycle
+        let service = PlatoRepository()
+        service.getPlatos { [unowned self] (response) in
+            switch response {
+            case .sucess(let platosJSONs):
+                print(platosJSONs)
+                
+            case .failure(let error):
+                self.showAlert(title: "Error",
+                               message: error.localizedDescription)
+            }
+        }
+
     }
     
     // 4to esta por aparecer

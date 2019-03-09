@@ -21,7 +21,9 @@
 		6919F6F5220F473E004C1F07 /* PlatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919F6F4220F473E004C1F07 /* PlatosViewController.swift */; };
 		695801AB222AD9EB00BF83A7 /* AppeanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695801AA222AD9EB00BF83A7 /* AppeanceManager.swift */; };
 		695801AD222AE09E00BF83A7 /* ContactanosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695801AC222AE09E00BF83A7 /* ContactanosViewController.swift */; };
+		6972E4962234300700CFACE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E4952234300700CFACE0 /* Constants.swift */; };
 		69D0F24F2234102A0018F459 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0F24E2234102A0018F459 /* API.swift */; };
+		69D0F25122342DDD0018F459 /* PlatoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0F25022342DDD0018F459 /* PlatoRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +43,9 @@
 		6919F6F4220F473E004C1F07 /* PlatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatosViewController.swift; sourceTree = "<group>"; };
 		695801AA222AD9EB00BF83A7 /* AppeanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppeanceManager.swift; sourceTree = "<group>"; };
 		695801AC222AE09E00BF83A7 /* ContactanosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactanosViewController.swift; sourceTree = "<group>"; };
+		6972E4952234300700CFACE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		69D0F24E2234102A0018F459 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		69D0F25022342DDD0018F459 /* PlatoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoRepository.swift; sourceTree = "<group>"; };
 		799F136048476AC921DF1354 /* Pods-Restaurante.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurante.release.xcconfig"; path = "Target Support Files/Pods-Restaurante/Pods-Restaurante.release.xcconfig"; sourceTree = "<group>"; };
 		ECD436AC1D57E1C7B0D54138 /* Pods-Restaurante.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurante.debug.xcconfig"; path = "Target Support Files/Pods-Restaurante/Pods-Restaurante.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,11 +108,11 @@
 		6919F6DB220F245D004C1F07 /* Restaurante */ = {
 			isa = PBXGroup;
 			children = (
+				6972E49422342FE000CFACE0 /* Resources */,
 				69D0F24D2234100C0018F459 /* Servicios */,
 				690C13CC2221AA7100C8332C /* Model */,
 				690C13C72221959F00C8332C /* Extensiones */,
 				6919F6EE220F247A004C1F07 /* UI */,
-				6919F6E3220F245E004C1F07 /* Assets.xcassets */,
 				6919F6E8220F245E004C1F07 /* Info.plist */,
 			);
 			path = Restaurante;
@@ -154,10 +158,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6972E49422342FE000CFACE0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6972E4952234300700CFACE0 /* Constants.swift */,
+				6919F6E3220F245E004C1F07 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		69D0F24D2234100C0018F459 /* Servicios */ = {
 			isa = PBXGroup;
 			children = (
 				69D0F24E2234102A0018F459 /* API.swift */,
+				69D0F25022342DDD0018F459 /* PlatoRepository.swift */,
 			);
 			path = Servicios;
 			sourceTree = "<group>";
@@ -326,12 +340,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D0F25122342DDD0018F459 /* PlatoRepository.swift in Sources */,
 				69D0F24F2234102A0018F459 /* API.swift in Sources */,
 				695801AB222AD9EB00BF83A7 /* AppeanceManager.swift in Sources */,
 				690C13C9222195E700C8332C /* UIViewController+Alert.swift in Sources */,
 				690C13CE2221AA8700C8332C /* Plato.swift in Sources */,
 				6919F6DD220F245D004C1F07 /* AppDelegate.swift in Sources */,
 				690C13D42221B56800C8332C /* PlatoTableViewCell.swift in Sources */,
+				6972E4962234300700CFACE0 /* Constants.swift in Sources */,
 				690C13D62221C04500C8332C /* LoginViewController.swift in Sources */,
 				695801AD222AE09E00BF83A7 /* ContactanosViewController.swift in Sources */,
 				690C13D02221AAB200C8332C /* PlatoFactory.swift in Sources */,
