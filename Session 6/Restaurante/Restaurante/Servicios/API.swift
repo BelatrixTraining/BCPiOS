@@ -19,7 +19,8 @@ class API {
         var request = URLRequest(url: url)
         request.httpMethod = verb
         if let parametros = body {
-            let data = JSONSerialization.data(withJSONObject: parametros, options: .prettyPrinted)
+            
+            let data2 = try? JSONSerialization.data(withJSONObject: parametros, options: .prettyPrinted)
         }
         
         let configuracion = URLSessionConfiguration.default
