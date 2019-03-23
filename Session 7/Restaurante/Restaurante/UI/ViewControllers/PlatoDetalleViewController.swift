@@ -14,7 +14,7 @@ class PlatoDetalleViewController: UIViewController {
     var plato:Plato? {
         didSet {
             if isViewLoaded {
-                platoImageView.image = plato?.image
+//                platoImageView.image = plato?.image
             }
         }
     }
@@ -22,7 +22,7 @@ class PlatoDetalleViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        platoImageView.image = plato?.image
+//        platoImageView.image = plato?.image
     }
     
     // 4to esta por aparecer

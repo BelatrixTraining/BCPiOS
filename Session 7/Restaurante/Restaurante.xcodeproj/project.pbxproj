@@ -10,8 +10,6 @@
 		569C4C5847140F8DF238DBE8 /* Pods_Restaurante.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67DDF19E1FC70F1CD9DFCF0F /* Pods_Restaurante.framework */; };
 		690C13C9222195E700C8332C /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C13C8222195E700C8332C /* UIViewController+Alert.swift */; };
 		690C13CB22219F1600C8332C /* PlatoDetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C13CA22219F1600C8332C /* PlatoDetalleViewController.swift */; };
-		690C13CE2221AA8700C8332C /* Plato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C13CD2221AA8700C8332C /* Plato.swift */; };
-		690C13D02221AAB200C8332C /* PlatoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C13CF2221AAB200C8332C /* PlatoFactory.swift */; };
 		690C13D42221B56800C8332C /* PlatoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C13D32221B56800C8332C /* PlatoTableViewCell.swift */; };
 		690C13D62221C04500C8332C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C13D52221C04500C8332C /* LoginViewController.swift */; };
 		6919F6DD220F245D004C1F07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919F6DC220F245D004C1F07 /* AppDelegate.swift */; };
@@ -22,6 +20,9 @@
 		695801AB222AD9EB00BF83A7 /* AppeanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695801AA222AD9EB00BF83A7 /* AppeanceManager.swift */; };
 		695801AD222AE09E00BF83A7 /* ContactanosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695801AC222AE09E00BF83A7 /* ContactanosViewController.swift */; };
 		6972E4962234300700CFACE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E4952234300700CFACE0 /* Constants.swift */; };
+		6990530422469046009D74CC /* CategoriaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6990530322469046009D74CC /* CategoriaRepository.swift */; };
+		6990530722469145009D74CC /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6990530622469145009D74CC /* SyncManager.swift */; };
+		6990530A22469E60009D74CC /* Restaurante.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6990530822469E60009D74CC /* Restaurante.xcdatamodeld */; };
 		69D0F24F2234102A0018F459 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0F24E2234102A0018F459 /* API.swift */; };
 		69D0F25122342DDD0018F459 /* PlatoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0F25022342DDD0018F459 /* PlatoRepository.swift */; };
 /* End PBXBuildFile section */
@@ -30,8 +31,6 @@
 		67DDF19E1FC70F1CD9DFCF0F /* Pods_Restaurante.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Restaurante.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		690C13C8222195E700C8332C /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		690C13CA22219F1600C8332C /* PlatoDetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoDetalleViewController.swift; sourceTree = "<group>"; };
-		690C13CD2221AA8700C8332C /* Plato.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plato.swift; sourceTree = "<group>"; };
-		690C13CF2221AAB200C8332C /* PlatoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoFactory.swift; sourceTree = "<group>"; };
 		690C13D32221B56800C8332C /* PlatoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoTableViewCell.swift; sourceTree = "<group>"; };
 		690C13D52221C04500C8332C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6919F6D9220F245D004C1F07 /* Restaurante.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurante.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,9 @@
 		695801AA222AD9EB00BF83A7 /* AppeanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppeanceManager.swift; sourceTree = "<group>"; };
 		695801AC222AE09E00BF83A7 /* ContactanosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactanosViewController.swift; sourceTree = "<group>"; };
 		6972E4952234300700CFACE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6990530322469046009D74CC /* CategoriaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaRepository.swift; sourceTree = "<group>"; };
+		6990530622469145009D74CC /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
+		6990530922469E60009D74CC /* Restaurante.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Restaurante.xcdatamodel; sourceTree = "<group>"; };
 		69D0F24E2234102A0018F459 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		69D0F25022342DDD0018F459 /* PlatoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoRepository.swift; sourceTree = "<group>"; };
 		799F136048476AC921DF1354 /* Pods-Restaurante.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurante.release.xcconfig"; path = "Target Support Files/Pods-Restaurante/Pods-Restaurante.release.xcconfig"; sourceTree = "<group>"; };
@@ -73,8 +75,7 @@
 		690C13CC2221AA7100C8332C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				690C13CD2221AA8700C8332C /* Plato.swift */,
-				690C13CF2221AAB200C8332C /* PlatoFactory.swift */,
+				6990530822469E60009D74CC /* Restaurante.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,6 +109,7 @@
 		6919F6DB220F245D004C1F07 /* Restaurante */ = {
 			isa = PBXGroup;
 			children = (
+				6990530522469132009D74CC /* Manager */,
 				6972E49422342FE000CFACE0 /* Resources */,
 				69D0F24D2234100C0018F459 /* Servicios */,
 				690C13CC2221AA7100C8332C /* Model */,
@@ -167,11 +169,20 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6990530522469132009D74CC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6990530622469145009D74CC /* SyncManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		69D0F24D2234100C0018F459 /* Servicios */ = {
 			isa = PBXGroup;
 			children = (
 				69D0F24E2234102A0018F459 /* API.swift */,
 				69D0F25022342DDD0018F459 /* PlatoRepository.swift */,
+				6990530322469046009D74CC /* CategoriaRepository.swift */,
 			);
 			path = Servicios;
 			sourceTree = "<group>";
@@ -346,15 +357,16 @@
 				69D0F24F2234102A0018F459 /* API.swift in Sources */,
 				695801AB222AD9EB00BF83A7 /* AppeanceManager.swift in Sources */,
 				690C13C9222195E700C8332C /* UIViewController+Alert.swift in Sources */,
-				690C13CE2221AA8700C8332C /* Plato.swift in Sources */,
 				6919F6DD220F245D004C1F07 /* AppDelegate.swift in Sources */,
+				6990530722469145009D74CC /* SyncManager.swift in Sources */,
 				690C13D42221B56800C8332C /* PlatoTableViewCell.swift in Sources */,
 				6972E4962234300700CFACE0 /* Constants.swift in Sources */,
 				690C13D62221C04500C8332C /* LoginViewController.swift in Sources */,
 				695801AD222AE09E00BF83A7 /* ContactanosViewController.swift in Sources */,
-				690C13D02221AAB200C8332C /* PlatoFactory.swift in Sources */,
 				690C13CB22219F1600C8332C /* PlatoDetalleViewController.swift in Sources */,
 				6919F6F5220F473E004C1F07 /* PlatosViewController.swift in Sources */,
+				6990530A22469E60009D74CC /* Restaurante.xcdatamodeld in Sources */,
+				6990530422469046009D74CC /* CategoriaRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +568,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6990530822469E60009D74CC /* Restaurante.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6990530922469E60009D74CC /* Restaurante.xcdatamodel */,
+			);
+			currentVersion = 6990530922469E60009D74CC /* Restaurante.xcdatamodel */;
+			path = Restaurante.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6919F6D1220F245D004C1F07 /* Project object */;
 }

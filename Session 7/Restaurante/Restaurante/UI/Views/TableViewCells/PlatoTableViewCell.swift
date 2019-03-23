@@ -19,10 +19,10 @@ class PlatoTableViewCell: UITableViewCell {
     
     var plato:Plato! {
         didSet {
-            platoImageView.image = plato.image
-            nameLabel.text = plato.name
-            detailLabel.text = plato.detail
-            priceLabel.text = "S/ \(plato.price)"
+            //platoImageView.image = plato.image
+            nameLabel.text = plato.nombre
+            detailLabel.text = plato.detalle
+            priceLabel.text = "S/ \(plato.precio)"
         }
     }
     

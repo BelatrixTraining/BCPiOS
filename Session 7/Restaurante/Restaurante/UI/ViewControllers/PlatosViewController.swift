@@ -30,13 +30,11 @@ class PlatosViewController: UIViewController {
         // tableView ya no es nil !!!
         // Todos los datos estan cargados
         // Se ejecuta 1 sola vez
-        platos = PlatoFactory.crearPlatos()
+        
         tableView.backgroundColor = .darkGray
         
-
         //unowned let weakSelf = self
         // OBJC __weak *weakSelf:PlatosViewController = self
-        
         
         // [unowned self] <------ SOluciona el Retain Cycle
         let service = PlatoRepository()
