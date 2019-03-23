@@ -8,12 +8,14 @@ PODS:
   - GoogleMaps/Maps (3.0.3):
     - GoogleMaps/Base
   - IQKeyboardManagerSwift (6.2.0)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - GoogleMaps
   - IQKeyboardManagerSwift
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,13 +23,15 @@ SPEC REPOS:
     - AlamofireImage
     - GoogleMaps
     - IQKeyboardManagerSwift
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: e85f1dda07e70626b41b3166bc57b55b4fed9ec5
+PODFILE CHECKSUM: c7ac487cc13c70f47494ba86a67267c7d29d1a7d
 
 COCOAPODS: 1.6.1
