@@ -7,10 +7,11 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
 protocol RestAPI {
     
-    typealias successResponse = (Any) -> Void
+    typealias successResponse = (JSON) -> Void
     
     func alamoService(atUrl urlString:String,
                       verb:HTTPMethod,
@@ -36,7 +37,8 @@ extension RestAPI {
                                              headers: headers)
         alamoRequest.validate().responseJSON { (response) in
             switch response.result {
-            case .success(let json):
+            case .success(let value):
+                let json = JSON(value)
                 success(json)
                 
             case .failure(let error):

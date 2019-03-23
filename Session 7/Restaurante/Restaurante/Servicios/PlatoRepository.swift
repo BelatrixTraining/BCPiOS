@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class PlatoRepository:RestAPI {
     
     enum PlatosResponse {
-        case sucess([[String:Any]])
+        case sucess([JSON])
         case failure(Error)
     }
     
@@ -19,15 +20,7 @@ class PlatoRepository:RestAPI {
         let url = "\(Constans.urlBase)platos"
         alamoService(atUrl: url, verb: .get, success: { (json) in
             
-            guard let dict = json as? [String:Any]  else {
-                let error = NSError(domain: ""
-                    , code: -9000
-                    , userInfo: [NSLocalizedDescriptionKey:"Invalid"])
-                completionHandler(.failure(error))
-                return
-            }
-            
-            if let mensaje = dict["message"] as? String {
+            if let mensaje = json["message"].string {
                 let error = NSError(domain: ""
                     , code: -9000
                     , userInfo: [NSLocalizedDescriptionKey:mensaje])
@@ -36,7 +29,31 @@ class PlatoRepository:RestAPI {
                 return
             }
             
-            let platosJSONs = dict["data"] as! [[String:Any]]
+            let platosJSONs = json["data"].arrayValue
+            let response = PlatosResponse.sucess(platosJSONs)
+            completionHandler(response)
+            
+        }) { (error) in
+            completionHandler(.failure(error))
+        }
+    }
+    
+    func getPlatos(porCategoria categoriaId:String,
+                   completionHandler: @escaping (PlatosResponse) -> Void) {
+        
+        let url = "\(Constans.urlBase)platos/categoria/\(categoriaId)"
+        alamoService(atUrl: url, verb: .get, success: { (json) in
+            
+            if let mensaje = json["message"].string {
+                let error = NSError(domain: ""
+                    , code: -9000
+                    , userInfo: [NSLocalizedDescriptionKey:mensaje])
+                let response = PlatosResponse.failure(error)
+                completionHandler(response)
+                return
+            }
+            
+            let platosJSONs = json["data"].arrayValue
             let response = PlatosResponse.sucess(platosJSONs)
             completionHandler(response)
             
