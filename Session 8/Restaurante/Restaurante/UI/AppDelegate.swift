@@ -31,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         AppearanceManager.shared.setupAppAppearance()
         
+        UserDefaults.standard.set("userName", forKey: "arturo")
+        let arturo = UserDefaults.standard.value(forKey: "userName")
+
+        // NO
+        
         return true
     }
 

@@ -14,5 +14,8 @@ target 'Restaurante' do
   pod 'SwiftyJSON'
   pod 'Alamofire'
   pod 'AlamofireImage'
+  
+  # Infrastructure
+  pod 'KeychainSwift'
 
 end

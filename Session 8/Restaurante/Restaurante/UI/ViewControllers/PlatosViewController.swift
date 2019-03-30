@@ -37,16 +37,10 @@ class PlatosViewController: UIViewController {
         // OBJC __weak *weakSelf:PlatosViewController = self
         
         // [unowned self] <------ SOluciona el Retain Cycle
-        let service = PlatoRepository()
-        service.getPlatos { [unowned self] (response) in
-            switch response {
-            case .sucess(let platosJSONs):
-                print(platosJSONs)
-                
-            case .failure(let error):
-                self.showAlert(title: "Error",
-                               message: error.localizedDescription)
-            }
+        SyncManager.shared.syncInformacion(success: { (_) in
+            
+        }) { (error) in
+            self.showAlert(title: "Error", message: error.localizedDescription)
         }
 
     }

@@ -29,6 +29,7 @@
 		699053122246A580009D74CC /* Plato+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6990530E2246A580009D74CC /* Plato+CoreDataProperties.swift */; };
 		699053142246A814009D74CC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699053132246A814009D74CC /* CoreDataManager.swift */; };
 		699053162246A955009D74CC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699053152246A955009D74CC /* CoreData.framework */; };
+		69908C8B224FD094000754B0 /* CategoriaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69908C8A224FD094000754B0 /* CategoriaManager.swift */; };
 		69D0F24F2234102A0018F459 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0F24E2234102A0018F459 /* API.swift */; };
 		69D0F25122342DDD0018F459 /* PlatoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D0F25022342DDD0018F459 /* PlatoRepository.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,8 @@
 		6990530E2246A580009D74CC /* Plato+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plato+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		699053132246A814009D74CC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		699053152246A955009D74CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		69908C8A224FD094000754B0 /* CategoriaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaManager.swift; sourceTree = "<group>"; };
+		69908C8C224FDB3D000754B0 /* Restaurante.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Restaurante.entitlements; sourceTree = "<group>"; };
 		69D0F24E2234102A0018F459 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		69D0F25022342DDD0018F459 /* PlatoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoRepository.swift; sourceTree = "<group>"; };
 		799F136048476AC921DF1354 /* Pods-Restaurante.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurante.release.xcconfig"; path = "Target Support Files/Pods-Restaurante/Pods-Restaurante.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 		6919F6DB220F245D004C1F07 /* Restaurante */ = {
 			isa = PBXGroup;
 			children = (
+				69908C8C224FDB3D000754B0 /* Restaurante.entitlements */,
 				6990530522469132009D74CC /* Manager */,
 				6972E49422342FE000CFACE0 /* Resources */,
 				69D0F24D2234100C0018F459 /* Servicios */,
@@ -189,10 +193,27 @@
 		6990530522469132009D74CC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				69908C89224FD06A000754B0 /* Domain Manager */,
+				69908C88224FD058000754B0 /* ApplicationManager */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		69908C88224FD058000754B0 /* ApplicationManager */ = {
+			isa = PBXGroup;
+			children = (
 				6990530622469145009D74CC /* SyncManager.swift */,
 				699053132246A814009D74CC /* CoreDataManager.swift */,
 			);
-			path = Manager;
+			path = ApplicationManager;
+			sourceTree = "<group>";
+		};
+		69908C89224FD06A000754B0 /* Domain Manager */ = {
+			isa = PBXGroup;
+			children = (
+				69908C8A224FD094000754B0 /* CategoriaManager.swift */,
+			);
+			path = "Domain Manager";
 			sourceTree = "<group>";
 		};
 		69D0F24D2234100C0018F459 /* Servicios */ = {
@@ -258,6 +279,11 @@
 				TargetAttributes = {
 					6919F6D8220F245D004C1F07 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -305,6 +331,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -314,6 +341,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +411,7 @@
 				6990530722469145009D74CC /* SyncManager.swift in Sources */,
 				690C13D42221B56800C8332C /* PlatoTableViewCell.swift in Sources */,
 				6990530F2246A580009D74CC /* Categoria+CoreDataClass.swift in Sources */,
+				69908C8B224FD094000754B0 /* CategoriaManager.swift in Sources */,
 				6972E4962234300700CFACE0 /* Constants.swift in Sources */,
 				690C13D62221C04500C8332C /* LoginViewController.swift in Sources */,
 				699053112246A580009D74CC /* Plato+CoreDataClass.swift in Sources */,

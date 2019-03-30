@@ -9,9 +9,16 @@
 
 import Foundation
 import CoreData
+import SwiftyJSON
 
 @objc(Categoria)
 public class Categoria: NSManagedObject {
+    
+    func copy(from json:JSON) {
+        id = json["_id"].stringValue
+        nombre = json["nombre"].stringValue
+        detalle = json["descripcion"].stringValue
+    }
     
     class func obtenerTodos(inContext context:NSManagedObjectContext) -> [Categoria] {
 

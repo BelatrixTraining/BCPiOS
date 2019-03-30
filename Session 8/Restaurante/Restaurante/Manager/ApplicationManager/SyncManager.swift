@@ -16,17 +16,16 @@ class SyncManager {
     func syncInformacion(success: @escaping (Any) -> Void,
                          failure: @escaping (Error) -> Void) {
         
-        let categoriaService = CategoriaRepository()
-        categoriaService.getCategorias { (response) in
+        CategoriaManager.shared.getCategorias { (response) in
             switch response {
-            case .sucess(let catJSONs):
+            case .sucess(let categorias):
                 
                 // INICIO DE USO DE GCD (Grand Central Dispatch)
                 let group = DispatchGroup()
                 
                 var a = 0
-                for json in catJSONs {
-                    let id = json["_id"].stringValue
+                for cat in categorias {
+                    let id = cat.id!
                     let service = PlatoRepository()
                     
                     let indice = a
@@ -53,7 +52,7 @@ class SyncManager {
                 
                 group.notify(queue: DispatchQueue.main, execute: {
                     print("Termino de sincronizar")
-                    success(catJSONs)
+                    success(categorias)
                 })
                 
                 
