@@ -13,4 +13,10 @@ import CoreData
 @objc(Plato)
 public class Plato: NSManagedObject {
 
+    class func obtener(porCategoria categoria:Categoria,
+                       inContext context:NSManagedObjectContext) -> [Plato] {
+        
+        
+    }
+    
 }

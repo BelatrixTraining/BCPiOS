@@ -2,7 +2,7 @@
 //  Categoria+CoreDataProperties.swift
 //  Restaurante
 //
-//  Created by Arturo Gamarra on 3/23/19.
+//  Created by Arturo Gamarra on 3/30/19.
 //  Copyright © 2019 Belatrix. All rights reserved.
 //
 //
@@ -17,9 +17,9 @@ extension Categoria {
         return NSFetchRequest<Categoria>(entityName: "Categoria")
     }
 
+    @NSManaged public var detalle: String?
     @NSManaged public var id: String?
     @NSManaged public var nombre: String?
-    @NSManaged public var detalle: String?
     @NSManaged public var platos: NSSet?
 
 }
