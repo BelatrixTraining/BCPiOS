@@ -30,12 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDIIxDbQyPLzeFg3UajphtLbgqBsEFntC4")
         IQKeyboardManager.shared.enable = true
         AppearanceManager.shared.setupAppAppearance()
-        
-        UserDefaults.standard.set("userName", forKey: "arturo")
-        let arturo = UserDefaults.standard.value(forKey: "userName")
-
-        // NO
-        
+ 
+        if let _ = UserManager.shared.currentUser {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabController")
+            window?.rootViewController = vc
+        }
         return true
     }
 

@@ -17,10 +17,10 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "PresentListaPlatosViewController",
-                          sender: self)
-        
-        
+        UserManager.shared.login(email: "cliente@gmail.com", password: "123456") { (respuesta) in
+            self.performSegue(withIdentifier: "PresentListaPlatosViewController",
+                              sender: self)
+        }
     }
     
 
