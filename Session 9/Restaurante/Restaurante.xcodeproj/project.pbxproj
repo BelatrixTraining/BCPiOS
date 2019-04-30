@@ -19,6 +19,7 @@
 		6919F6F5220F473E004C1F07 /* PlatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919F6F4220F473E004C1F07 /* PlatosViewController.swift */; };
 		695801AB222AD9EB00BF83A7 /* AppeanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695801AA222AD9EB00BF83A7 /* AppeanceManager.swift */; };
 		695801AD222AE09E00BF83A7 /* ContactanosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695801AC222AE09E00BF83A7 /* ContactanosViewController.swift */; };
+		69595AB92277DDC00063F2D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 69595AB82277DDC00063F2D2 /* GoogleService-Info.plist */; };
 		6972E4962234300700CFACE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E4952234300700CFACE0 /* Constants.swift */; };
 		6990530422469046009D74CC /* CategoriaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6990530322469046009D74CC /* CategoriaRepository.swift */; };
 		6990530722469145009D74CC /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6990530622469145009D74CC /* SyncManager.swift */; };
@@ -52,6 +53,7 @@
 		6919F6F4220F473E004C1F07 /* PlatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatosViewController.swift; sourceTree = "<group>"; };
 		695801AA222AD9EB00BF83A7 /* AppeanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppeanceManager.swift; sourceTree = "<group>"; };
 		695801AC222AE09E00BF83A7 /* ContactanosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactanosViewController.swift; sourceTree = "<group>"; };
+		69595AB82277DDC00063F2D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6972E4952234300700CFACE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6990530322469046009D74CC /* CategoriaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaRepository.swift; sourceTree = "<group>"; };
 		6990530622469145009D74CC /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				690C13C72221959F00C8332C /* Extensiones */,
 				6919F6EE220F247A004C1F07 /* UI */,
 				6919F6E8220F245E004C1F07 /* Info.plist */,
+				69595AB82277DDC00063F2D2 /* GoogleService-Info.plist */,
 			);
 			path = Restaurante;
 			sourceTree = "<group>";
@@ -289,7 +292,16 @@
 					6919F6D8220F245D004C1F07 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.DataProtection = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 0;
 							};
 						};
@@ -320,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6919F6E7220F245E004C1F07 /* LaunchScreen.storyboard in Resources */,
+				69595AB92277DDC00063F2D2 /* GoogleService-Info.plist in Resources */,
 				6919F6E4220F245E004C1F07 /* Assets.xcassets in Resources */,
 				6919F6E2220F245D004C1F07 /* Main.storyboard in Resources */,
 			);
@@ -339,9 +352,12 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Restaurante/Pods-Restaurante-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -349,9 +365,12 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -578,6 +597,8 @@
 			baseConfigurationReference = ECD436AC1D57E1C7B0D54138 /* Pods-Restaurante.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Restaurante/Restaurante.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9MAL9P855;
 				INFOPLIST_FILE = Restaurante/Info.plist;
@@ -587,6 +608,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.belatrix.bcp.Restaurante;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -597,6 +619,8 @@
 			baseConfigurationReference = 799F136048476AC921DF1354 /* Pods-Restaurante.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Restaurante/Restaurante.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9MAL9P855;
 				INFOPLIST_FILE = Restaurante/Info.plist;
@@ -606,6 +630,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.belatrix.bcp.Restaurante;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

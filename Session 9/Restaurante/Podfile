@@ -17,5 +17,7 @@ target 'Restaurante' do
   
   # Infrastructure
   pod 'KeychainSwift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 
 end

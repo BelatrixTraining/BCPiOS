@@ -73,6 +73,10 @@ class ContactanosViewController: UIViewController {
         */
     }
     
+    func showAlertNotification(_ userInfor:[AnyHashable : Any]) {
+        showAlert(title: "Info", message: "Nuevo plato: \(userInfor["name"] ?? "")")
+    }
+    
     @IBAction func telefonoLabelTapped(_ sender: UITapGestureRecognizer) {
         //let label = sender.view as! UILabel
         let urlString = "tel://17173350"
